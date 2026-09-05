@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rakibul Hasan Nahid, AI content creator building social content, short-form video concepts and practical automation workflows.">
+  <meta name="theme-color" content="#120f16">
+  <title>Rakibul Hasan Nahid | AI Content Creator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #120f16;
+      --bg-soft: #1b1620;
+      --card: #211a27;
+      --line: #382e41;
+      --ink: #f7f0e8;
+      --muted: #b2a5ba;
+      --accent: #ff5c7a;
+      --accent-soft: rgba(255, 92, 122, .14);
+      --gold: #ffc24b;
+      --green: #61d6a5;
+      --max: 1100px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      background:
+        radial-gradient(circle at 82% 8%, rgba(255, 92, 122, .10), transparent 28rem),
+        radial-gradient(circle at 8% 48%, rgba(255, 194, 75, .06), transparent 25rem),
+        var(--bg);
+      color: var(--ink);
+      font-family: 'Hind Siliguri', 'Sora', sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    h1, h2, h3, .eyebrow, .brand, .pill, .tag { font-family: 'Sora', 'Hind Siliguri', sans-serif; }
+    ::selection { background: var(--accent); color: #160c11; }
+
+    .wrap { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .section { padding: 96px 0; border-top: 1px solid var(--line); }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(56, 46, 65, .8);
+      background: rgba(18, 15, 22, .82);
+      backdrop-filter: blur(16px);
+    }
+
+    nav .wrap {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand { font-weight: 800; font-size: .95rem; letter-spacing: .04em; }
+    .brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 24px; color: var(--muted); font-size: .92rem; }
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: var(--ink); }
+
+    .hero { min-height: min(86vh, 860px); display: grid; align-items: center; padding: 110px 0 90px; }
+    .hero-grid { display: grid; grid-template-columns: 1.45fr .75fr; gap: 72px; align-items: center; }
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 14px;
+      color: var(--muted);
+      font-size: .86rem;
+      margin-bottom: 24px;
+      background: rgba(255,255,255,.02);
+    }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 15px var(--green); }
+    .eyebrow { color: var(--gold); font-size: .82rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    .hero h1 { font-size: clamp(3rem, 7vw, 5.7rem); line-height: .98; letter-spacing: -.055em; margin: 16px 0 26px; max-width: 11ch; }
+    .hero h1 span { color: var(--accent); }
+    .lede { max-width: 58ch; color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.2rem); }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 22px; border: 1px solid var(--line); border-radius: 8px; font-weight: 700; transition: transform .2s ease, border-color .2s ease, background .2s ease; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--accent); border-color: var(--accent); color: #1b0d13; }
+    .btn-secondary:hover { border-color: var(--accent); }
+
+    .hero-card {
+      position: relative;
+      min-height: 410px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 30px;
+      background: linear-gradient(145deg, rgba(255,92,122,.11), rgba(255,194,75,.04) 54%, rgba(255,255,255,.02));
+      overflow: hidden;
+    }
+    .hero-card::before { content: ''; position: absolute; width: 260px; height: 260px; right: -90px; top: -90px; border-radius: 50%; border: 1px solid rgba(255,194,75,.24); box-shadow: 0 0 0 34px rgba(255,194,75,.03), 0 0 0 68px rgba(255,92,122,.03); }
+    .hero-card .monogram { position: absolute; right: 22px; bottom: -30px; color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,.15); font: 800 9rem/1 'Sora', sans-serif; }
+    .hero-card h2 { font-size: 1.55rem; max-width: 17ch; margin: 22px 0 14px; }
+    .hero-card p { color: var(--muted); }
+    .skill-stack { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 26px; position: relative; z-index: 1; }
+    .pill, .tag { border: 1px solid var(--line); border-radius: 999px; padding: 7px 11px; font-size: .76rem; color: var(--ink); background: rgba(18,15,22,.62); }
+
+    .section-head { display: grid; grid-template-columns: 78px 1fr; gap: 20px; align-items: start; margin-bottom: 48px; }
+    .section-num { color: var(--accent); font-family: 'Sora', sans-serif; font-weight: 700; }
+    .section-head h2 { font-size: clamp(2rem, 5vw, 3.3rem); line-height: 1.08; letter-spacing: -.035em; }
+    .section-head p { color: var(--muted); max-width: 60ch; margin-top: 12px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; }
+    .about-copy p { color: var(--muted); font-size: 1.08rem; margin-bottom: 18px; }
+    .about-copy strong { color: var(--ink); }
+    .facts { display: grid; gap: 12px; }
+    .fact { background: var(--bg-soft); border: 1px solid var(--line); border-radius: 12px; padding: 20px; }
+    .fact small { display: block; color: var(--muted); margin-bottom: 4px; }
+    .fact strong { color: var(--gold); font-family: 'Sora', sans-serif; }
+
+    .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .work-card { min-height: 290px; display: flex; flex-direction: column; justify-content: space-between; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 28px; transition: transform .2s ease, border-color .2s ease; }
+    .work-card:hover { transform: translateY(-4px); border-color: rgba(255,92,122,.55); }
+    .work-card .icon { font-size: 1.75rem; }
+    .work-card h3 { margin: 24px 0 10px; font-size: 1.35rem; }
+    .work-card p { color: var(--muted); }
+    .tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .tag { color: var(--muted); font-size: .72rem; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .service { border-top: 2px solid var(--accent); background: var(--bg-soft); padding: 26px; min-height: 230px; }
+    .service:nth-child(2), .service:nth-child(5) { border-color: var(--gold); }
+    .service:nth-child(3) { border-color: var(--green); }
+    .service h3 { margin-bottom: 12px; font-size: 1.15rem; }
+    .service p { color: var(--muted); }
+
+    .journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .step { background: var(--bg-soft); padding: 26px 22px; min-height: 210px; }
+    .step span { color: var(--accent); font: 700 .86rem 'Sora', sans-serif; }
+    .step h3 { margin: 18px 0 9px; font-size: 1.05rem; }
+    .step p { color: var(--muted); font-size: .93rem; }
+
+    .learning-box { border: 1px solid var(--line); background: linear-gradient(120deg, var(--accent-soft), rgba(255,194,75,.06)); border-radius: 18px; padding: 42px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 50px; align-items: center; }
+    .learning-box h3 { font-size: clamp(1.55rem, 4vw, 2.25rem); margin: 12px 0 14px; }
+    .learning-box p { color: var(--muted); }
+    .learning-list { list-style: none; display: grid; gap: 11px; }
+    .learning-list li { padding: 13px 16px; border: 1px solid var(--line); background: rgba(18,15,22,.62); border-radius: 8px; }
+    .learning-list li::before { content: '✓'; color: var(--green); margin-right: 10px; font-weight: 700; }
+
+    .contact-box { padding: 54px; border-radius: 22px; background: var(--ink); color: #1b1520; display: grid; grid-template-columns: 1.2fr .8fr; align-items: center; gap: 40px; }
+    .contact-box h2 { font-size: clamp(2rem, 5vw, 3.6rem); line-height: 1.05; letter-spacing: -.04em; }
+    .contact-box p { margin-top: 15px; color: #5d5264; max-width: 56ch; }
+    .contact-actions { display: grid; gap: 12px; }
+    .contact-link { border: 1px solid #c9bdc8; border-radius: 10px; padding: 14px 16px; font-family: 'Sora', sans-serif; font-weight: 700; transition: background .2s ease; word-break: break-word; }
+    .contact-link:hover { background: #eee5e0; }
+
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); font-size: .88rem; }
+    footer .wrap { display: flex; justify-content: space-between; gap: 20px; }
+
+    @media (max-width: 880px) {
+      .hero-grid, .about-grid, .learning-box, .contact-box { grid-template-columns: 1fr; }
+      .hero-card { min-height: 300px; }
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 32px, var(--max)); }
+      .section { padding: 72px 0; }
+      .hero { min-height: auto; padding: 84px 0 70px; }
+      .hero-grid > *, .about-grid > *, .learning-box > *, .contact-box > * { min-width: 0; }
+      .hero h1 { font-size: clamp(2.35rem, 11.8vw, 3.75rem); max-width: 100%; letter-spacing: -.035em; }
+      .cta-row { display: grid; grid-template-columns: 1fr; width: 100%; }
+      .btn { width: 100%; }
+      .hero-card { width: 100%; max-width: 100%; }
+      .nav-links a:not(:last-child) { display: none; }
+      .work-grid, .services-grid, .journey { grid-template-columns: 1fr; }
+      .section-head { grid-template-columns: 1fr; gap: 8px; }
+      .contact-box { padding: 32px 24px; }
+      footer .wrap { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <nav aria-label="Primary navigation">
+    <div class="wrap">
+      <a class="brand" href="#top">NAHID<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <header class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="status"><span class="status-dot"></span> নতুন প্রজেক্ট ও শেখার জন্য প্রস্তুত</div>
+          <div class="eyebrow">AI Content Creator · Storyteller</div>
+          <h1>আইডিয়া থেকে <span>দৃশ্যমান গল্প।</span></h1>
+          <p class="lede">আমি রাকিবুল হাসান নাহিদ। AI tools, storytelling এবং audience psychology ব্যবহার করে social content, short-form video concept ও repeatable creative workflow তৈরি করি।</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#work">আমার কাজ দেখুন</a>
+            <a class="btn btn-secondary" href="mailto:rakibulhasannahid57@gmail.com">যোগাযোগ করুন</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Focus areas">
+          <div class="eyebrow">বর্তমান ফোকাস</div>
+          <h2>Creative work that people stop for.</h2>
+          <p>মানুষ যেন থামে, বোঝে এবং মনে রাখে, সেই লক্ষ্যেই প্রতিটি visual ও message তৈরি করি।</p>
+          <div class="skill-stack">
+            <span class="pill">AI Visuals</span>
+            <span class="pill">Short Videos</span>
+            <span class="pill">Social Content</span>
+            <span class="pill">POD Creative</span>
+            <span class="pill">Automation</span>
+          </div>
+          <div class="monogram" aria-hidden="true">N</div>
+        </aside>
+      </div>
+    </header>
+
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">01</div>
+          <div><h2>আমার সম্পর্কে</h2><p>Content creation থেকে AI automation পর্যন্ত, শেখা এবং বাস্তব কাজে প্রয়োগ করাই আমার পথ।</p></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>আমি এমন content system তৈরি করতে আগ্রহী, যেখানে <strong>ভালো idea, পরিষ্কার message এবং consistent execution</strong> একসাথে কাজ করে। শুধু সুন্দর কিছু বানানো নয়, content কেন মানুষ দেখবে এবং কীভাবে সেটি কাজে লাগবে, সেটিও ভাবি।</p>
+            <p>Medical education, coffee community, print-on-demand এবং social storytelling নিয়ে কাজ করতে গিয়ে আমি research, prompt design, visual direction, caption writing এবং content testing শিখছি।</p>
+            <p>এখন আমার প্রধান লক্ষ্য <strong>AI Automation</strong> শেখা এবং সেটিকে digital marketing ও e-commerce workflow-এ ব্যবহার করা। এই website আমার কাজ, শেখা এবং নতুন experiment-এর জীবন্ত portfolio।</p>
+          </div>
+          <div class="facts">
+            <div class="fact"><small>আমি যা করি</small><strong>Content + Visual Storytelling</strong></div>
+            <div class="fact"><small>আমি যা শিখছি</small><strong>AI Automation</strong></div>
+            <div class="fact"><small>আমার কাজের ক্ষেত্র</small><strong>Social · POD · E-commerce</strong></div>
+            <div class="fact"><small>কাজের ধরন</small><strong>Research → Create → Test</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">02</div>
+          <div><h2>নির্বাচিত কাজ</h2><p>যেসব project-এ education, community এবং creative experimentation একসাথে এসেছে।</p></div>
+        </div>
+        <div class="work-grid">
+          <article class="work-card">
+            <div><div class="icon">🩺</div><h3>MedExplain</h3><p>সাধারণ মানুষ ও medical learners-এর জন্য clear, responsible medical education content, diagnosis quiz, infographic, caption এবং short-video concept তৈরি।</p></div>
+            <div class="tag-row"><span class="tag">Medical Education</span><span class="tag">Quiz Design</span><span class="tag">AI Visual</span></div>
+          </article>
+          <article class="work-card">
+            <div><div class="icon">☕</div><h3>MugBrews</h3><p>Coffee community এবং POD brand-এর জন্য human, trustworthy messaging, audience-first content এবং mug creative direction নিয়ে কাজ।</p></div>
+            <div class="tag-row"><span class="tag">Coffee Community</span><span class="tag">POD</span><span class="tag">Brand Voice</span></div>
+          </article>
+          <article class="work-card">
+            <div><div class="icon">🎬</div><h3>AI Video Lab</h3><p>Reference Reel বিশ্লেষণ করে original 10-second scene prompt, character continuity, dialogue timing এবং short-form storytelling structure তৈরি।</p></div>
+            <div class="tag-row"><span class="tag">Reels</span><span class="tag">Prompt Direction</span><span class="tag">Story Structure</span></div>
+          </article>
+          <article class="work-card">
+            <div><div class="icon">🧩</div><h3>Community Content Systems</h3><p>ভিন্ন audience-এর জন্য repeatable content format, emotional hook, review process এবং testing workflow গড়ে তোলা।</p></div>
+            <div class="tag-row"><span class="tag">Content System</span><span class="tag">Audience Research</span><span class="tag">Testing</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">03</div>
+          <div><h2>যেভাবে সাহায্য করতে পারি</h2><p>Idea থেকে publish-ready creative direction পর্যন্ত focused support।</p></div>
+        </div>
+        <div class="services-grid">
+          <article class="service"><h3>Social Content Ideas</h3><p>Audience অনুযায়ী post concept, hook, caption এবং repeatable series direction।</p></article>
+          <article class="service"><h3>AI Image Direction</h3><p>Brand-consistent image prompt, composition, mood, typography direction এবং revision brief।</p></article>
+          <article class="service"><h3>Short-Video Prompts</h3><p>10-second scene breakdown, dialogue, camera movement, continuity এবং negative constraints।</p></article>
+          <article class="service"><h3>POD Creative Support</h3><p>Mug ও apparel-এর জন্য quote direction, audience fit, mockup concept এবং campaign messaging।</p></article>
+          <article class="service"><h3>Content Workflow</h3><p>Topic planning, asset organization, review checklist এবং repeatable production process।</p></article>
+          <article class="service"><h3>Automation Experiments</h3><p>AI, APIs এবং no-code tools ব্যবহার করে repetitive marketing কাজ সহজ করার শেখার project।</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-num">04</div>
+          <div><h2>আমার কাজের পদ্ধতি</h2><p>Random content নয়, একটি পরিষ্কার learning এবং improvement loop।</p></div>
+        </div>
+        <div class="journey">
+          <div class="step"><span>STEP 01</span><h3>Understand</h3><p>Audience, goal এবং platform context বুঝি।</p></div>
+          <div class="step"><span>STEP 02</span><h3>Create</h3><p>Message, visual এবং format একসাথে তৈরি করি।</p></div>
+          <div class="step"><span>STEP 03</span><h3>Review</h3><p>Clarity, quality এবং brand consistency যাচাই করি।</p></div>
+          <div class="step"><span>STEP 04</span><h3>Improve</h3><p>Response ও performance দেখে পরের version উন্নত করি।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="learning">
+      <div class="wrap">
+        <div class="learning-box">
+          <div>
+            <div class="eyebrow">Learning in public</div>
+            <h3>AI Automation দিয়ে creative business আরও smart করা</h3>
+            <p>আমি শেখার সাথে সাথে ছোট project বানাই, test করি এবং এখানে progress যোগ করি। লক্ষ্য হলো content, marketing এবং e-commerce-এর repetitive কাজ automation দিয়ে সহজ করা।</p>
+          </div>
+          <ul class="learning-list">
+            <li>n8n এবং no-code workflow</li>
+            <li>API ও webhook basics</li>
+            <li>Google Sheets automation</li>
+            <li>AI-assisted content systems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="wrap">
+        <div class="contact-box">
+          <div>
+            <div class="eyebrow">Let’s build something useful</div>
+            <h2>একসাথে কিছু বানানো যাক।</h2>
+            <p>Content idea, creative collaboration অথবা AI workflow নিয়ে কথা বলতে সরাসরি যোগাযোগ করুন।</p>
+          </div>
+          <div class="contact-actions">
+            <a class="contact-link" href="mailto:rakibulhasannahid57@gmail.com" aria-label="Email Rakibul Hasan Nahid">Send Email ↗</a>
+            <a class="contact-link" href="https://github.com/rakibulhasannahid57-stack" target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>© 2026 Rakibul Hasan Nahid</span><span>Built with HTML, CSS and curiosity.</span></div>
+  </footer>
+</body>
+</html>
