@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rakibul Hasan Nahid — Content Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #120F16;
+    --bg-soft: #1B1620;
+    --line: #322A3A;
+    --ink: #F3EDE6;
+    --ink-muted: #A79AB0;
+    --accent: #FF5C7A;
+    --accent-2: #FFC24B;
+  }
+
+  *{ margin:0; padding:0; box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Hind Siliguri','Sora',sans-serif;
+    line-height:1.6;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,.display{
+    font-family:'Sora','Hind Siliguri',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.01em;
+  }
+
+  a{ color:inherit; text-decoration:none; }
+
+  ::selection{ background:var(--accent); color:var(--bg); }
+
+  /* ---------- layout shell ---------- */
+  .wrap{
+    max-width:920px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+
+  nav{
+    position:sticky; top:0; z-index:10;
+    backdrop-filter: blur(10px);
+    background:rgba(18,15,22,0.7);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{
+    display:flex; justify-content:space-between; align-items:center;
+    height:64px;
+  }
+  .brand{ font-size:1rem; font-weight:700; }
+  .nav-links{ display:flex; gap:28px; font-size:0.92rem; color:var(--ink-muted); }
+  .nav-links a:hover{ color:var(--ink); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding:120px 0 90px;
+    position:relative;
+  }
+  .hero .kicker{
+    color:var(--accent-2);
+    font-size:0.95rem;
+    font-weight:600;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.05;
+    max-width:11ch;
+  }
+  .hero h1 .accent{ color:var(--accent); }
+  .hero p.lede{
+    margin-top:26px;
+    max-width:46ch;
+    font-size:1.15rem;
+    color:var(--ink-muted);
+  }
+  .hero .cta-row{
+    margin-top:40px;
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding:13px 26px;
+    border-radius:2px;
+    font-weight:600;
+    font-size:0.95rem;
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary{
+    background:var(--accent);
+    color:#160C11;
+  }
+  .btn-primary:hover{ transform:translateY(-2px); background:#ff7590; }
+  .btn-ghost{
+    border:1px solid var(--line);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{ border-color:var(--ink-muted); transform:translateY(-2px); }
+
+  .hero-mark{
+    position:absolute;
+    right:-40px; top:60px;
+    font-size:clamp(6rem,18vw,11rem);
+    font-weight:800;
+    color:transparent;
+    -webkit-text-stroke:1px var(--line);
+    user-select:none;
+    z-index:-1;
+  }
+
+  /* ---------- about ---------- */
+  .about{
+    padding:80px 0;
+    border-top:1px solid var(--line);
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .section-head .num{
+    color:var(--accent);
+    font-weight:700;
+    font-size:1rem;
+  }
+  .section-head h2{ font-size:1.8rem; }
+
+  .about-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr;
+    gap:48px;
+  }
+  .about-grid p{
+    color:var(--ink-muted);
+    font-size:1.05rem;
+    margin-bottom:16px;
+    max-width:60ch;
+  }
+  .about-grid p strong{ color:var(--ink); font-weight:600; }
+
+  .stat-card{
+    background:var(--bg-soft);
+    border:1px solid var(--line);
+    padding:22px 24px;
+    margin-bottom:14px;
+  }
+  .stat-card .label{
+    color:var(--ink-muted);
+    font-size:0.85rem;
+    margin-bottom:6px;
+  }
+  .stat-card .value{
+    font-family:'Sora',sans-serif;
+    font-weight:700;
+    font-size:1.3rem;
+    color:var(--accent-2);
+  }
+
+  @media (max-width:720px){
+    .about-grid{ grid-template-columns:1fr; }
+    .hero-mark{ display:none; }
+  }
+
+  /* ---------- contact ---------- */
+  .contact{
+    padding:90px 0 100px;
+    border-top:1px solid var(--line);
+    text-align:left;
+  }
+  .contact h2{
+    font-size:clamp(1.8rem,5vw,2.6rem);
+    max-width:16ch;
+    margin-bottom:20px;
+  }
+  .contact p{ color:var(--ink-muted); margin-bottom:32px; max-width:46ch; }
+  .social-row{
+    display:flex; gap:14px; flex-wrap:wrap;
+  }
+  .social-row a{
+    padding:12px 22px;
+    border:1px solid var(--line);
+    font-size:0.92rem;
+    transition:border-color 0.15s ease, color 0.15s ease;
+  }
+  .social-row a:hover{
+    border-color:var(--accent);
+    color:var(--accent);
+  }
+
+  footer{
+    border-top:1px solid var(--line);
+    padding:26px 0;
+    color:var(--ink-muted);
+    font-size:0.85rem;
+    display:flex;
+    justify-content:space-between;
+  }
+
+  /* reduced motion respect */
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .btn{ transition:none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">RAKIBUL HASAN NAHID</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">Content Creator</div>
+    <h1>গল্প বলি,<br><span class="accent">দৃশ্যে দৃশ্যে।</span></h1>
+    <p class="lede">
+      আমি রাকিবুল হাসান নাহিদ। কনটেন্ট বানাই যা মানুষ থামিয়ে দেখে, শেয়ার করে,
+      আর মনে রাখে। ভিডিও থেকে শুরু করে গল্প বলার প্রতিটা ধাপে ভাবনা আর যত্ন থাকে।
+    </p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-primary">যোগাযোগ করুন</a>
+      <a href="#about" class="btn btn-ghost">আরও জানুন</a>
+    </div>
+  </div>
+  <div class="hero-mark">NAHID</div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="num">০১</span>
+      <h2>About Me</h2>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>
+          কনটেন্ট ক্রিয়েশনের জগতে আমার যাত্রা শুরু হয়েছিল একটা সাধারণ ইচ্ছা থেকে —
+          <strong>মানুষের কাছে গল্প পৌঁছে দেওয়া</strong>, এমনভাবে যা তাদের নাড়া দেয়।
+        </p>
+        <p>
+          আমি বিশ্বাস করি ভালো কনটেন্ট মানে শুধু ভিউ বাড়ানো না, বরং দর্শকের সাথে
+          সত্যিকারের একটা সংযোগ তৈরি করা। প্রতিটা প্রজেক্টে আমি সেই সংযোগটাই খুঁজি।
+        </p>
+        <p>
+          এই পেজটা এখনও নতুন — শিগগিরই এখানে আমার কাজের নমুনা, পুরনো প্রজেক্ট,
+          আর আরও অনেক গল্প যোগ হবে।
+        </p>
+      </div>
+      <div>
+        <div class="stat-card">
+          <div class="label">ফোকাস</div>
+          <div class="value">ভিডিও কনটেন্ট</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">ভিত্তি</div>
+          <div class="value">গল্প বলা</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">স্ট্যাটাস</div>
+          <div class="value">নতুন প্রজেক্টের জন্য প্রস্তুত</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <h2>একসাথে কিছু বানানো যাক</h2>
+    <p>কোনো আইডিয়া, কোলাবোরেশন বা সাধারণ আড্ডা — যেকোনো কারণে নির্দ্বিধায় যোগাযোগ করুন।</p>
+    <div class="social-row">
+      <a href="mailto:your@email.com">Email</a>
+      <a href="#">Facebook</a>
+      <a href="#">YouTube</a>
+      <a href="#">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
+    <span>© 2026 Rakibul Hasan Nahid</span>
+    <span>Made with care</span>
+  </div>
+</footer>
+
+</body>
+</html>
